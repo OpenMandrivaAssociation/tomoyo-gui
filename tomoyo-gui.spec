@@ -23,6 +23,9 @@ similar way to AppArmor security framework.
 %build
 make all
 
+# use arch-specific libdir
+sed -e 's,/usr/lib/tomoyo-mdv,%{_libdir}/tomoyo-mdv,g' Makefile gui/tomoyo-gui
+
 %install
 rm -rf %{buildroot}
 
