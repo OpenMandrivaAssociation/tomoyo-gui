@@ -1,6 +1,6 @@
 Name:		tomoyo-gui
 Version:	0.01
-Release:	%mkrel 2
+Release:	%mkrel 3
 Summary:	Graphical interface for TOMOYO Linux
 License:	GPLv2
 Group:		System/Base
@@ -23,9 +23,6 @@ similar way to AppArmor security framework.
 %build
 make all
 
-# use arch-specific libdir
-sed -e 's,/usr/lib/tomoyo-mdv,%{_libdir}/tomoyo-mdv,g' Makefile gui/tomoyo-gui
-
 %install
 rm -rf %{buildroot}
 
@@ -40,5 +37,5 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %doc AUTHORS COPYING README NEWS TODO
 %_sbindir/tomoyo-gui
-%_libdir/tomoyo-mdv/tomoyo-gui.*
-%_libdir/tomoyo-mdv/version.*
+%_datadir/tomoyo-mdv/tomoyo-gui.*
+%_datadir/tomoyo-mdv/version.*
