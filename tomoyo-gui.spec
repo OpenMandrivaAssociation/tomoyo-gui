@@ -1,5 +1,5 @@
 Name:		tomoyo-gui
-Version:	0.03
+Version:	0.04
 Release:	%mkrel 1
 Summary:	Graphical interface for TOMOYO Linux
 License:	GPLv2
@@ -39,3 +39,4 @@ rm -rf %{buildroot}
 %_sbindir/tomoyo-gui
 %_datadir/tomoyo-mdv/tomoyo-gui.*
 %_datadir/tomoyo-mdv/version.*
+%_datadir/tomoyo-mdv/tomoyo.png
