@@ -1,6 +1,6 @@
 Name:		tomoyo-gui
 Version:	0.05
-Release:	%mkrel 3
+Release:	%mkrel 4
 Summary:	Graphical interface for TOMOYO Linux
 License:	GPLv2
 Group:		System/Base
