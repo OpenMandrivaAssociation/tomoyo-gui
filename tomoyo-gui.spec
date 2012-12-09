@@ -1,6 +1,6 @@
 Name:		tomoyo-gui
 Version:	0.05
-Release:	%mkrel 4
+Release:	6
 Summary:	Graphical interface for TOMOYO Linux
 License:	GPLv2
 Group:		System/Base
@@ -9,7 +9,7 @@ Source0:	%{name}-%{version}.tar.bz2
 Requires:	pygtk2.0
 Requires:	python
 Requires:	ccs-tools
-BuildRoot:	%{_tmppath}/%{name}-%{version}
+BuildArch:	noarch
 
 %description
 This is the graphical interface to TOMOYO Linux Security Framework,
@@ -24,19 +24,59 @@ similar way to AppArmor security framework.
 make all
 
 %install
-rm -rf %{buildroot}
-
 make install
 
-%find_lang %name
-
-%clean
-rm -rf %{buildroot}
-
-%files -f %{name}.lang
-%defattr(-,root,root)
+%files
 %doc AUTHORS COPYING README NEWS TODO
-%_sbindir/tomoyo-gui
-%_datadir/tomoyo-mdv/tomoyo-gui.*
-%_datadir/tomoyo-mdv/version.*
-%_datadir/tomoyo-mdv/tomoyo.png
+%{_sbindir}/tomoyo-gui
+%{_datadir}/tomoyo-mdv/tomoyo-gui.*
+%{_datadir}/tomoyo-mdv/version.*
+%{_datadir}/tomoyo-mdv/tomoyo.png
+
+
+%changelog
+* Fri May 06 2011 Oden Eriksson <oeriksson@mandriva.com> 0.05-4mdv2011.0
++ Revision: 670718
+- mass rebuild
+
+* Fri Dec 03 2010 Oden Eriksson <oeriksson@mandriva.com> 0.05-3mdv2011.0
++ Revision: 608038
+- rebuild
+
+* Wed Mar 17 2010 Oden Eriksson <oeriksson@mandriva.com> 0.05-2mdv2010.1
++ Revision: 524231
+- rebuilt for 2010.1
+
+* Thu Oct 01 2009 Eugeni Dodonov <eugeni@mandriva.com> 0.05-1mdv2010.0
++ Revision: 452190
+- 0.05:
+- Implemented exception editing and deletion
+- Implemented policy importing
+- Support initializing tomoyo policy from toolbar
+
+* Thu Sep 10 2009 Eugeni Dodonov <eugeni@mandriva.com> 0.04-1mdv2010.0
++ Revision: 437498
+- 0.04:
+- Added help for all tabs
+- Displaying exceptions in gui (read-only for now)
+- Loading exceptions
+- Creating initial tomoyo policy when necessary
+
+* Wed Sep 09 2009 Eugeni Dodonov <eugeni@mandriva.com> 0.03-1mdv2010.0
++ Revision: 435326
+- 0.03:
+- Show informative window when loading big tomoyo policy
+- Handle cases when tomoyo policy was not correctly installed (#53382)
+
+* Wed Jul 22 2009 Eugeni Dodonov <eugeni@mandriva.com> 0.02-1mdv2010.0
++ Revision: 398692
+- 0.02
+- Implemented integration into MCC.
+- Implemented partial policy exporting.
+
+* Wed Jul 15 2009 Eugeni Dodonov <eugeni@mandriva.com> 0.01-3mdv2010.0
++ Revision: 396074
+- Use arch-specific libdir.
+- First version. Use with care :).
+- Created package structure for tomoyo-gui.
+
