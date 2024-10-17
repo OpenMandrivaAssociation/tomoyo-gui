@@ -4,7 +4,7 @@ Release:	10
 Summary:	Graphical interface for TOMOYO Linux
 License:	GPLv2
 Group:		System/Base
-Url:		http://git.mandriva.com/?p=projects/tomoyo-mdv.git
+Url:		https://git.mandriva.com/?p=projects/tomoyo-mdv.git
 Source0:	%{name}-%{version}.tar.bz2
 Requires:	pygtk2.0
 Requires:	python
