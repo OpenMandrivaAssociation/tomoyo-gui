@@ -11,6 +11,7 @@ Requires:	python
 Requires:	tomoyo-tools
 BuildArch:	noarch
 
+BuildRequires:	make
 %description
 This is the graphical interface to TOMOYO Linux Security Framework,
 developed by Mandriva. This GUI allows to view and edit system security
